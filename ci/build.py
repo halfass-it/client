@@ -2,8 +2,6 @@ import platform
 import subprocess
 import sys
 
-from pypeline.pypeline import Pipeline
-
 def detect_platform():
   system = platform.system()
 
