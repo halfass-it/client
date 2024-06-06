@@ -1,30 +1,3 @@
-SCRIPTS_DIR := ./ci
-SCRIPTS := $(wildcard $(SCRIPTS_DIR)/*.py)
-SCRIPT_NAMES := $(notdir $(basename $(SCRIPTS)))
-SCRIPTS_WITH_ARG := NULL
-
-.PHONY: default
-default:
-	@echo "[make] $(SCRIPT_NAMES)"
-
-.PHONY: $(SCRIPT_NAMES)
-$(SCRIPT_NAMES): %:
-	@echo "[make] Running $@"
-	@if echo "$(SCRIPTS_WITH_ARG)" | grep -qw "$@"; then \
-		if [ "$(word 2,$(MAKECMDGOALS))" = "" ]; then \
-			echo "[make] Error: argument is required for $@"; \
-			exit 1; \
-		fi; \
-		arg=$(word 2,$(MAKECMDGOALS)); \
-		python $(SCRIPTS_DIR)/$@.py $$arg; \
-	else \
-		python $(SCRIPTS_DIR)/$@.py; \
-	fi
-
-# Ignore the second argument to prevent Make from thinking it is a target
-%:
-	@:
-
-.PHONY: all
-all: $(SCRIPT_NAMES)
-
+.PHONY: build
+build:
+	python3 ./ci/build.py
