@@ -18,14 +18,14 @@ sources = Glob("src/*.cpp")
 
 if env["platform"] == "macos":
     library = env.SharedLibrary(
-        "engine/bin/halfass.{}.{}.framework/halfass.{}.{}".format(
+        "engine/bin/libhalfassit.{}.{}.framework/libhalfassit.{}.{}".format(
             env["platform"], env["target"], env["platform"], env["target"]
         ),
         source=sources,
     )
 else:
     library = env.SharedLibrary(
-        "engine/bin/halfass{}{}".format(env["suffix"], env["SHLIBSUFFIX"]),
+        "engine/bin/libhalfassit{}{}".format(env["suffix"], env["SHLIBSUFFIX"]),
         source=sources,
     )
 

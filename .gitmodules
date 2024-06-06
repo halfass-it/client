@@ -1,6 +1,8 @@
 [submodule "engine"]
 	path = engine
 	url = git@github.com:halfass-it/engine.git
+	branch = main
 [submodule "godot-cpp"]
 	path = godot-cpp
 	url = git@github.com:godotengine/godot-cpp.git
+	branch = 4.2
