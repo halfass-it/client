@@ -2,3 +2,8 @@
 	path = godot-cpp
 	url = https://github.com/godotengine/godot-cpp.git
 	branch = 4.2
+
+[submodule "engine"]
+	path = engine
+	url = https://github.com/halfass-it/engine.git
+	branch = main
