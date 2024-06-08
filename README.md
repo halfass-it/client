@@ -7,6 +7,7 @@ ojdk>=?
 make>=?
 scons>=?
 clang>=?
+llvm>=?
 ...?
 ````
 
@@ -33,4 +34,14 @@ make build
 ...
 
 ````
+
+````
+=> READS
+[ ] understand how GPU rendering works at a lower level than the engine
+	[ ] https://edw.is/learning-vulkan/
+
+
+
+````
+
 
